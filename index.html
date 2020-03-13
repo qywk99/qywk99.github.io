@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-线段树" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-站队" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/03/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="article-date">
-  <time datetime="2020-03-13T14:44:24.000Z" itemprop="datePublished">2020-03-13</time>
+    <a href="/2020/03/10/%E7%AB%99%E9%98%9F/" class="article-date">
+  <time datetime="2020-03-09T16:31:05.000Z" itemprop="datePublished">2020-03-10</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+      <a class="article-title" href="/2020/03/10/%E7%AB%99%E9%98%9F/">站队</a>
     </h1>
   
 
@@ -86,29 +86,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>线段树可以解决区间加法，求单点查值或单点加法，求区间和问题问题</p>
-<h1 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h1><p>给出一个长为n的数列，以及n操作，操作涉及区间加法，单点查值。</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行输入一个数字n。</p>
-<p>第二行输入n个数字，第i个数字为ai，以空格隔开。</p>
-<p>接下来输入n行询问，每行输入四个数字opt、l、r、c，以空格隔开。</p>
-<p>若opt = 0，表示将位于[l,r]的之间的数字都加c。</p>
-<p>若opt = 1，表示询问ar的值（l和c忽略）。</p>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>对于每次询问，输出一行一个数字表示答案。</p>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 2 2 3</span><br><span class="line">0 1 3 1</span><br><span class="line">1 0 1 0</span><br><span class="line">0 1 2 2</span><br><span class="line">1 0 2 0</span><br></pre></td></tr></table></figure>
+        <h1 id="试题F：站队-15’"><a href="#试题F：站队-15’" class="headerlink" title="试题F：站队 15’"></a>试题F：站队 15’</h1><p>九月份新生入学，学校安排了为期1414天的军训。现在要求对N名同学进行排队。规则如下:</p>
+<ul>
+<li>所有同学由身高从小到大排序</li>
+<li>相同身高的同学按年龄(出生到当前时间的天数)由小到大进行排序</li>
+<li>若前两项均相同，按编号由小到大进行排序</li>
+</ul>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行读入一个正整数N<br>接下来2至N+12至N+1行，每行读入两个正整数H,D(H表示学生身高，D表示学生由出生到当前时间的天数)，学生的编号按读入数据顺序正序表示</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>输出经过排序后学生的编号位置</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">175 7100</span><br><span class="line">158 7050</span><br><span class="line">180 7000</span><br></pre></td></tr></table></figure>
 
-<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 1 3</span><br></pre></td></tr></table></figure>
 
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">50005</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(pos&lt;=n)&#123;</span><br><span class="line">		d[pos]+=v;</span><br><span class="line">		pos+=(pos&amp;-pos); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(pos)&#123;</span><br><span class="line">		res+=d[pos];</span><br><span class="line">		pos-=(pos&amp;-pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> num,opt,l,r,c;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;num;</span><br><span class="line">		add(i,num);</span><br><span class="line">		add(i+<span class="number">1</span>,-num);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;opt&gt;&gt;l&gt;&gt;r&gt;&gt;c;</span><br><span class="line">		<span class="keyword">if</span>(opt)&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;query(r)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			add(l,c);</span><br><span class="line">			add(r+<span class="number">1</span>,-c);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>题解如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> h,y,id;</span><br><span class="line">&#125;;</span><br><span class="line">Student st[<span class="number">1000005</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student A,Student B)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(A.h&lt;B.h)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(A.h&gt;B.h)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(A.y&lt;B.y)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(A.y&gt;B.y)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(A.id&lt;B.id)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        st[i].id=i;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;st[i].h&gt;&gt;st[i].y;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(st+<span class="number">1</span>,st+<span class="number">1</span>+n,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;st[i].id&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/" data-id="ck7qdtu44000izgh42gle1wzj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/10/%E7%AB%99%E9%98%9F/" data-id="ck7qeomgz000gfoh46994ajqn" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="tag">结构体</a></li></ul>
 
     </footer>
   </div>
@@ -117,10 +117,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-切香肠" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/03/13/hello-world/" class="article-date">
-  <time datetime="2020-03-13T07:17:20.249Z" itemprop="datePublished">2020-03-13</time>
+    <a href="/2020/03/10/%E5%88%87%E9%A6%99%E8%82%A0/" class="article-date">
+  <time datetime="2020-03-09T16:25:19.000Z" itemprop="datePublished">2020-03-10</time>
 </a>
     
   </div>
@@ -131,7 +131,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/13/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/03/10/%E5%88%87%E9%A6%99%E8%82%A0/">切香肠</a>
     </h1>
   
 
@@ -139,66 +139,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="试题I：切香肠-25’"><a href="#试题I：切香肠-25’" class="headerlink" title="试题I：切香肠 25’"></a>试题I：切香肠 25’</h1><p>窗外肉价飞涨，屋里灶台微响。便当店老板在沉思中苦恼:<br>现在店里的存货还有n<em>n</em>条特制香肠，长度分别为L_i<em>L*</em>i<em>​。如果能从它们中切割出k</em>k<em>条长度相同的香肠的话，就能应付突如其来的奇怪的订单<br>你能帮这位老板计算一下这k</em>k*条香肠每条最长能有多长吗?<br>(答案保留小数点后两位，规定11单位长度的香肠最多可以切割成100100份)</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行输入22个正整数n, k<em>n</em>,<em>k</em><br>第2-(n+1)2−(<em>n</em>+1)行每行输入一个实数L(1.0≤L_i≤1.0 * 10^5)<em>L</em>(1.0≤<em>L*</em>i*​≤1.0∗105) </p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>输出切出来的香肠的最大长度，结果保留两位小数</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入复制"><a href="#输入复制" class="headerlink" title="输入复制"></a>输入复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 11</span><br><span class="line">8.02</span><br><span class="line">7.43</span><br><span class="line">4.57</span><br><span class="line">5.39</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h4 id="输出复制"><a href="#输出复制" class="headerlink" title="输出复制"></a>输出复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.00</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/13/hello-world/" data-id="ck7qdtu2s0001zgh412pqb8j3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vimrc" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/12/vimrc/" class="article-date">
-  <time datetime="2020-03-11T16:06:36.000Z" itemprop="datePublished">2020-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/vimrc/">vimrc</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>个人的vim配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; 用户自定义配置（该文件放一般性配置，可覆盖~&#x2F;.vimrc里的配置，若要增加、卸载插件，请放入~&#x2F;.vimrc.custom.plugins）</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot;:inoremap &lt;leader&gt;; &lt;esc&gt;A;</span><br><span class="line">&quot;:inoremap &lt;leader&gt;j &lt;esc&gt;A&#123;&lt;CR&gt;&lt;ESC&gt;O&#125;</span><br><span class="line">:inoremap &lt;c-j&gt; &lt;esc&gt;A&#123;&lt;CR&gt;&#125;&lt;esc&gt;O</span><br><span class="line">:map ; la</span><br><span class="line">noremap h i</span><br><span class="line">noremap H I</span><br><span class="line">noremap i k</span><br><span class="line">noremap I K</span><br><span class="line">noremap k j</span><br><span class="line">noremap K J</span><br><span class="line">noremap j h</span><br><span class="line">map &lt;c-a&gt; :8&lt;cr&gt;VG</span><br><span class="line">vmap ;y : !&#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;clip.exe&lt;cr&gt;u&#39;&#39;</span><br><span class="line"></span><br><span class="line">vmap &lt;c-c&gt; : !&#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;clip.exe&lt;cr&gt;u&#39;&#39;</span><br><span class="line">noremap &lt;F5&gt; :w &lt;CR&gt; :!clear&lt;CR&gt; :!g++ -g % -o %&lt; &amp;&amp; .&#x2F;%&lt; &lt;CR&gt;</span><br><span class="line">&quot;noremap &lt;F5&gt;  :w&lt;cr&gt;:!clear&lt;cr&gt; :!g++ -g % -O %&lt; &amp;&amp; .&#x2F;%&lt; &lt;cr&gt;</span><br><span class="line">set scrolloff&#x3D;15</span><br><span class="line">autocmd BufNewFile *.cpp exec &quot;:call SetTitle()&quot;</span><br><span class="line">func SetTitle()</span><br><span class="line">    if &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;</span><br><span class="line">        call setline(1, &quot;&#x2F;*************************************************************************&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;), &quot;    &gt; File Name: &quot;.expand(&quot;%&quot;))</span><br><span class="line">        call append(line(&quot;.&quot;)+1, &quot;    &gt; Author: qywk99&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+2, &quot;    &gt; Mail: 2529107424@qq.com &quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+3, &quot;    &gt; Created Time: &quot;.strftime(&quot;%c&quot;))</span><br><span class="line">        call append(line(&quot;.&quot;)+4, &quot; ************************************************************************&#x2F;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+5, &quot;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+6,&quot;#include&lt;bits&#x2F;stdc++.h&gt;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+7,&quot;using namespace std;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+8,&quot;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+9,&quot;int main()&#123;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+10,&quot;\t&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+11,&quot;\treturn 0;&quot;)</span><br><span class="line">        call append(line(&quot;.&quot;)+12,&quot;&#125;&quot;)</span><br><span class="line"></span><br><span class="line">    endif</span><br><span class="line">endfunc</span><br><span class="line"></span><br><span class="line">map &lt;F3&gt; : call CopyToWindows&lt;cr&gt;</span><br><span class="line">map! &lt;F3&gt; &lt;ESC&gt; : call CopyToWindows()&lt;CR&gt;</span><br><span class="line">func! CopyToWindows()</span><br><span class="line">    exec &quot;w&quot;</span><br><span class="line">    exec &quot;!cat % |&#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;clip.exe&quot;</span><br><span class="line">endfunc</span><br><span class="line"></span><br><span class="line">&quot;开启相对行号</span><br><span class="line">set relativenumber  </span><br><span class="line"></span><br><span class="line">&quot; 开启鼠标</span><br><span class="line"> set mouse&#x3D;a</span><br><span class="line"></span><br><span class="line">&quot; 设置光标所在列高亮</span><br><span class="line">set cursorcolumn</span><br><span class="line"></span><br><span class="line">&quot; indentLine 开启代码对齐线</span><br><span class="line">let g:indentLine_enabled &#x3D; 1</span><br><span class="line"></span><br><span class="line">&quot; markdown</span><br><span class="line">&quot; let system &#x3D; system(&#39;uname -s&#39;)</span><br><span class="line">&quot; if system &#x3D;&#x3D; &quot;Darwin\n&quot;</span><br><span class="line">&quot;     let g:mkdp_path_to_chrome &#x3D; &quot;&#x2F;Applications&#x2F;Google\\ Chrome.app&#x2F;Contents&#x2F;MacOS&#x2F;Google\\ Chrome&quot;</span><br><span class="line">&quot; else</span><br><span class="line">&quot;     let g:mkdp_path_to_chrome &#x3D; &#39;&#x2F;usr&#x2F;bin&#x2F;google-chrome-stable %U&#39;</span><br><span class="line">&quot; endif</span><br><span class="line">&quot; nmap &lt;silent&gt; &lt;F7&gt; &lt;Plug&gt;MarkdownPreview</span><br><span class="line">&quot; imap &lt;silent&gt; &lt;F7&gt; &lt;Plug&gt;MarkdownPreview</span><br><span class="line">&quot; nmap &lt;silent&gt; &lt;F8&gt; &lt;Plug&gt;StopMarkdownPreview</span><br><span class="line">&quot; imap &lt;silent&gt; &lt;F8&gt; &lt;Plug&gt;StopMarkdownPreview</span><br><span class="line"></span><br><span class="line">&quot; Doxygen</span><br><span class="line">&quot; let g:DoxygenToolkit_authorName&#x3D;&quot;chxuan, 787280310@qq.com&quot;</span><br><span class="line">&quot; let s:licenseTag &#x3D; &quot;Copyright(C)\&lt;enter&gt;&quot;</span><br><span class="line">&quot; let s:licenseTag &#x3D; s:licenseTag . &quot;For free\&lt;enter&gt;&quot;</span><br><span class="line">&quot; let s:licenseTag &#x3D; s:licenseTag . &quot;All right reserved\&lt;enter&gt;&quot;</span><br><span class="line">&quot; let g:DoxygenToolkit_licenseTag &#x3D; s:licenseTag</span><br><span class="line">&quot; let g:DoxygenToolkit_briefTag_funcName&#x3D;&quot;yes&quot;</span><br><span class="line">&quot; let g:doxygen_enhanced_color&#x3D;1</span><br><span class="line">&quot; let g:DoxygenToolkit_commentType&#x3D;&quot;Qt&quot;</span><br></pre></td></tr></table></figure>
+<p>题解如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">10000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">double</span> num;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;num);</span><br><span class="line">		d[i]=num*<span class="number">100</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> l,r;</span><br><span class="line">	l=<span class="number">1</span>,r=<span class="number">10000000</span>;</span><br><span class="line">	<span class="keyword">int</span> m=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;r&amp;&amp;r-l!=<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			num+=<span class="number">1.0</span>*d[i]/mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(num&gt;=k)&#123;</span><br><span class="line">			l=mid;</span><br><span class="line">			m=<span class="built_in">max</span>(mid,m);</span><br><span class="line">			mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			r=mid;</span><br><span class="line">			mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//cout&lt;&lt;l&lt;&lt;" "&lt;&lt;mid&lt;&lt;" "&lt;&lt;r&lt;&lt;endl;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">double</span> ans=m/<span class="number">100.0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.2f"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/12/vimrc/" data-id="ck7qdtu2y0003zgh4b9i725bj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/10/%E5%88%87%E9%A6%99%E8%82%A0/" data-id="ck7qeomgi0005foh43mm2gdqg" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vimrc/" rel="tag">vimrc</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li></ul>
 
     </footer>
   </div>
@@ -243,10 +201,165 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/06/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85/" data-id="ck7qdtu340008zgh4496o88cy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/06/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85/" data-id="ck7qeomgp0009foh4atmo7296" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-线段树" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/04/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="article-date">
+  <time datetime="2020-03-04T14:44:24.000Z" itemprop="datePublished">2020-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>线段树可以解决区间加法，求单点查值或单点加法，求区间和问题问题</p>
+<h1 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h1><p>给出一个长为n的数列，以及n操作，操作涉及区间加法，单点查值。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行输入一个数字n。</p>
+<p>第二行输入n个数字，第i个数字为ai，以空格隔开。</p>
+<p>接下来输入n行询问，每行输入四个数字opt、l、r、c，以空格隔开。</p>
+<p>若opt = 0，表示将位于[l,r]的之间的数字都加c。</p>
+<p>若opt = 1，表示询问ar的值（l和c忽略）。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>对于每次询问，输出一行一个数字表示答案。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 2 2 3</span><br><span class="line">0 1 3 1</span><br><span class="line">1 0 1 0</span><br><span class="line">0 1 2 2</span><br><span class="line">1 0 2 0</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">50005</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(pos&lt;=n)&#123;</span><br><span class="line">		d[pos]+=v;</span><br><span class="line">		pos+=(pos&amp;-pos); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(pos)&#123;</span><br><span class="line">		res+=d[pos];</span><br><span class="line">		pos-=(pos&amp;-pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> num,opt,l,r,c;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;num;</span><br><span class="line">		add(i,num);</span><br><span class="line">		add(i+<span class="number">1</span>,-num);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;opt&gt;&gt;l&gt;&gt;r&gt;&gt;c;</span><br><span class="line">		<span class="keyword">if</span>(opt)&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;query(r)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			add(l,c);</span><br><span class="line">			add(r+<span class="number">1</span>,-c);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/04/%E7%BA%BF%E6%AE%B5%E6%A0%91/" data-id="ck7qeomh1000ifoh4116i55lq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-二维迷宫" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/" class="article-date">
+  <time datetime="2020-03-03T16:22:30.000Z" itemprop="datePublished">2020-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/">二维迷宫</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二维迷宫"><a href="#二维迷宫" class="headerlink" title="二维迷宫"></a>二维迷宫</h1><p>给你一个 n<em>n</em> 行 m<em>m</em> 列 的迷宫，迷宫的每一个格子可能是是路，也有可能是墙。我们只能走到路上而不能走到墙上。</p>
+<p>现在你需要判断是否存在可行的方案，从二维迷宫中左上角的格子走到右下角。</p>
+<p>说明：如果你当前在二维迷宫中的某一个点，你能够走到的点仅仅只有当前点上下左右四个点中在迷宫中的可走的路。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入的第一行包含两个整数 n<em>n</em> 和 m<em>m</em> ，分别表示迷宫的行数和列数。</p>
+<p>接下来 n<em>n</em> 行，每行包含一个长度为 m<em>m</em> 的字符串，用于表示这个二维迷宫。</p>
+<p>对于二维迷宫中的每一个点，我们用“.”表示可走的路，用“#”表示不可走的墙。</p>
+<p>数据保证左上角的起点（即第11行第11个点）和右下角的终点（即第n<em>n</em>行第m<em>m</em>个点）都是可走的路。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>如果从左上角到右下角存在可行的路，输出“YES”；否则，输出“NO”。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入复制"><a href="#输入复制" class="headerlink" title="输入复制"></a>输入复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">..###</span><br><span class="line">#....</span><br><span class="line">####.</span><br><span class="line">####.</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出复制"><a href="#输出复制" class="headerlink" title="输出复制"></a>输出复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br></pre></td></tr></table></figure>
+
+<h4 id="输入复制-1"><a href="#输入复制-1" class="headerlink" title="输入复制"></a>输入复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">.....</span><br><span class="line">.####</span><br><span class="line">...#.</span><br><span class="line">###..</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出复制-1"><a href="#输出复制-1" class="headerlink" title="输出复制"></a>输出复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NO</span><br></pre></td></tr></table></figure>
+
+<p>题解如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> Map[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">bool</span> flag=<span class="literal">false</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==n&amp;&amp;y==m)&#123;</span><br><span class="line">        flag=<span class="literal">true</span>;<span class="comment">//出口</span></span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(Map[x][y]==<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    Map[x][y]=<span class="string">'#'</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>&amp;&amp;Map[x<span class="number">-1</span>][y]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x<span class="number">-1</span>,y);</span><br><span class="line">    <span class="keyword">if</span>(x!=n&amp;&amp;Map[x+<span class="number">1</span>][y]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x+<span class="number">1</span>,y);</span><br><span class="line">    <span class="keyword">if</span>(y&gt;<span class="number">1</span>&amp;&amp;Map[x][y<span class="number">-1</span>]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x,y<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span>(y!=m&amp;&amp;Map[x][y+<span class="number">1</span>]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x,y+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">            Map[i][j]=getchar();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    f(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/" data-id="ck7qeomgd0003foh43m9x7c6y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-填算式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/03/%E5%A1%AB%E7%AE%97%E5%BC%8F/" class="article-date">
+  <time datetime="2020-03-02T16:20:33.000Z" itemprop="datePublished">2020-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/03/%E5%A1%AB%E7%AE%97%E5%BC%8F/">填算式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="试题A：填算式"><a href="#试题A：填算式" class="headerlink" title="试题A：填算式"></a>试题A：填算式</h1><p>请看下面的算式： </p>
+<p>(ABCD - EFGH) * XY = 900<br>每个字母代表一个0~9的数字，不同字母代表不同数字，首位不能为0。 </p>
+<p>比如，(5012 - 4987) * 36 就是一个解。 </p>
+<p>请找到另一个解，并提交该解中 ABCD 所代表的整数。 </p>
+<p>请严格按照格式，通过浏览器提交答案。<br>注意：只提交 ABCD 所代表的整数，不要写其它附加内容，比如：说明性的文字。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">zs</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c,<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> d[a]*<span class="number">1000</span>+d[b]*<span class="number">100</span>+d[c]*<span class="number">10</span>+d[e];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">zs</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> d[a]*<span class="number">10</span>+d[b];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> <span class="built_in">step</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">step</span>==<span class="number">10</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(d[<span class="number">0</span>]==<span class="number">0</span>||d[<span class="number">4</span>]==<span class="number">0</span>||d[<span class="number">8</span>]==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        <span class="keyword">int</span> a=zs(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">int</span> b=zs(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>);</span><br><span class="line">        <span class="keyword">int</span> c=zs(<span class="number">8</span>,<span class="number">9</span>);</span><br><span class="line">        <span class="keyword">if</span>((a-b)*c==<span class="number">900</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a!=<span class="number">5012</span>)</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;a;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i])&#123;</span><br><span class="line">            vis[i]=<span class="literal">true</span>;</span><br><span class="line">            d[<span class="built_in">step</span>]=i;</span><br><span class="line">            dfs(<span class="built_in">step</span>+<span class="number">1</span>);</span><br><span class="line">            vis[i]=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	dfs(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/03/%E5%A1%AB%E7%AE%97%E5%BC%8F/" data-id="ck7qeomgm0008foh458gzgflu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li></ul>
 
     </footer>
   </div>
@@ -291,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/02/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/" data-id="ck7qdtu310005zgh4cprx1aqa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/02/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/" data-id="ck7qeomgw000dfoh42ste5qmq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li></ul>
@@ -345,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/01/%E4%BB%BB%E6%84%8F%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" data-id="ck7qdtu300004zgh4h4j23n16" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/01/%E4%BB%BB%E6%84%8F%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" data-id="ck7qeomgf0004foh49ylydnko" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li></ul>
@@ -386,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/01/%E6%95%B0%E5%80%BC%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/" data-id="ck7qdtu37000azgh48wlra1m2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/01/%E6%95%B0%E5%80%BC%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2/" data-id="ck7qeomgt000bfoh46a3n05df" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/25/01%E8%83%8C%E5%8C%85/" data-id="ck7qdtu2i0000zgh4e43l0qbp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/25/01%E8%83%8C%E5%8C%85/" data-id="ck7qeomfi0000foh4buojghe3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li></ul>
@@ -444,48 +557,12 @@
 
 
   
-    <article id="post-线性递归斐波拉数列" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/13/%E7%BA%BF%E6%80%A7%E9%80%92%E5%BD%92%E6%96%90%E6%B3%A2%E6%8B%89%E6%95%B0%E5%88%97/" class="article-date">
-  <time datetime="2020-02-13T08:00:29.000Z" itemprop="datePublished">2020-02-13</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/13/%E7%BA%BF%E6%80%A7%E9%80%92%E5%BD%92%E6%96%90%E6%B3%A2%E6%8B%89%E6%95%B0%E5%88%97/">线性递归斐波拉数列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="斐波拉数列"><a href="#斐波拉数列" class="headerlink" title="斐波拉数列"></a>斐波拉数列</h2><p>通项公式：f(n)=f(n-1)+f(n-2);其中f(1)=f(2)=1;<br>使用递归可以很好理解算法，但时间复杂度比较高。优化后的时间复杂度为O（N）；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (d[num]= d[num]?d[num]:f(num<span class="number">-1</span>)+f(num<span class="number">-2</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	d[<span class="number">1</span>]=d[<span class="number">2</span>]=<span class="number">1</span>;<span class="comment">//初始化</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;f(<span class="number">4</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/13/%E7%BA%BF%E6%80%A7%E9%80%92%E5%BD%92%E6%96%90%E6%B3%A2%E6%8B%89%E6%95%B0%E5%88%97/" data-id="ck7qdtu39000dzgh45vkvdxzp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -498,7 +575,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vimrc/" rel="tag">vimrc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vimrc/" rel="tag">vimrc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="tag">结构体</a></li></ul>
     </div>
   </div>
 
@@ -508,7 +585,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/vimrc/" style="font-size: 10px;">vimrc</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 20px;">动态规划</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 10px;">数论</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
+      <a href="/tags/dfs/" style="font-size: 15px;">dfs</a> <a href="/tags/vimrc/" style="font-size: 10px;">vimrc</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 20px;">动态规划</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 10px;">数论</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" style="font-size: 10px;">结构体</a>
     </div>
   </div>
 
@@ -530,15 +607,11 @@
       <ul>
         
           <li>
-            <a href="/2020/03/13/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+            <a href="/2020/03/10/%E7%AB%99%E9%98%9F/">站队</a>
           </li>
         
           <li>
-            <a href="/2020/03/13/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/12/vimrc/">vimrc</a>
+            <a href="/2020/03/10/%E5%88%87%E9%A6%99%E8%82%A0/">切香肠</a>
           </li>
         
           <li>
@@ -546,7 +619,11 @@
           </li>
         
           <li>
-            <a href="/2020/03/02/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85/">多重背包</a>
+            <a href="/2020/03/04/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/">二维迷宫</a>
           </li>
         
       </ul>

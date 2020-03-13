@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>二维迷宫 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="二维迷宫给你一个 nn 行 mm 列 的迷宫，迷宫的每一个格子可能是是路，也有可能是墙。我们只能走到路上而不能走到墙上。 现在你需要判断是否存在可行的方案，从二维迷宫中左上角的格子走到右下角。 说明：如果你当前在二维迷宫中的某一个点，你能够走到的点仅仅只有当前点上下左右四个点中在迷宫中的可走的路。 输入输入的第一行包含两个整数 nn 和 mm ，分别表示迷宫的行数和列数。 接下来 nn 行，每行包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二维迷宫">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="二维迷宫给你一个 nn 行 mm 列 的迷宫，迷宫的每一个格子可能是是路，也有可能是墙。我们只能走到路上而不能走到墙上。 现在你需要判断是否存在可行的方案，从二维迷宫中左上角的格子走到右下角。 说明：如果你当前在二维迷宫中的某一个点，你能够走到的点仅仅只有当前点上下左右四个点中在迷宫中的可走的路。 输入输入的第一行包含两个整数 nn 和 mm ，分别表示迷宫的行数和列数。 接下来 nn 行，每行包">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-03T16:22:30.000Z">
+<meta property="article:modified_time" content="2020-03-13T16:23:58.640Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="dfs">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-二维迷宫" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/" class="article-date">
+  <time datetime="2020-03-03T16:22:30.000Z" itemprop="datePublished">2020-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      二维迷宫
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二维迷宫"><a href="#二维迷宫" class="headerlink" title="二维迷宫"></a>二维迷宫</h1><p>给你一个 n<em>n</em> 行 m<em>m</em> 列 的迷宫，迷宫的每一个格子可能是是路，也有可能是墙。我们只能走到路上而不能走到墙上。</p>
+<p>现在你需要判断是否存在可行的方案，从二维迷宫中左上角的格子走到右下角。</p>
+<p>说明：如果你当前在二维迷宫中的某一个点，你能够走到的点仅仅只有当前点上下左右四个点中在迷宫中的可走的路。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入的第一行包含两个整数 n<em>n</em> 和 m<em>m</em> ，分别表示迷宫的行数和列数。</p>
+<p>接下来 n<em>n</em> 行，每行包含一个长度为 m<em>m</em> 的字符串，用于表示这个二维迷宫。</p>
+<p>对于二维迷宫中的每一个点，我们用“.”表示可走的路，用“#”表示不可走的墙。</p>
+<p>数据保证左上角的起点（即第11行第11个点）和右下角的终点（即第n<em>n</em>行第m<em>m</em>个点）都是可走的路。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>如果从左上角到右下角存在可行的路，输出“YES”；否则，输出“NO”。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入复制"><a href="#输入复制" class="headerlink" title="输入复制"></a>输入复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">..###</span><br><span class="line">#....</span><br><span class="line">####.</span><br><span class="line">####.</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出复制"><a href="#输出复制" class="headerlink" title="输出复制"></a>输出复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br></pre></td></tr></table></figure>
+
+<h4 id="输入复制-1"><a href="#输入复制-1" class="headerlink" title="输入复制"></a>输入复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 5</span><br><span class="line">.....</span><br><span class="line">.####</span><br><span class="line">...#.</span><br><span class="line">###..</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出复制-1"><a href="#输出复制-1" class="headerlink" title="输出复制"></a>输出复制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NO</span><br></pre></td></tr></table></figure>
+
+<p>题解如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> Map[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">bool</span> flag=<span class="literal">false</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==n&amp;&amp;y==m)&#123;</span><br><span class="line">        flag=<span class="literal">true</span>;<span class="comment">//出口</span></span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(Map[x][y]==<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    Map[x][y]=<span class="string">'#'</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>&amp;&amp;Map[x<span class="number">-1</span>][y]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x<span class="number">-1</span>,y);</span><br><span class="line">    <span class="keyword">if</span>(x!=n&amp;&amp;Map[x+<span class="number">1</span>][y]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x+<span class="number">1</span>,y);</span><br><span class="line">    <span class="keyword">if</span>(y&gt;<span class="number">1</span>&amp;&amp;Map[x][y<span class="number">-1</span>]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x,y<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span>(y!=m&amp;&amp;Map[x][y+<span class="number">1</span>]!=<span class="string">'#'</span>)</span><br><span class="line">        f(x,y+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">            Map[i][j]=getchar();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    f(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/" data-id="ck7qeomgd0003foh43m9x7c6y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/04/%E7%BA%BF%E6%AE%B5%E6%A0%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          线段树
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/03/%E5%A1%AB%E7%AE%97%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">填算式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dfs/" rel="tag">dfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vimrc/" rel="tag">vimrc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86/" rel="tag">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag">数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="tag">结构体</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dfs/" style="font-size: 15px;">dfs</a> <a href="/tags/vimrc/" style="font-size: 10px;">vimrc</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 20px;">动态规划</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 10px;">数论</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" style="font-size: 10px;">结构体</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/10/%E7%AB%99%E9%98%9F/">站队</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/10/%E5%88%87%E9%A6%99%E8%82%A0/">切香肠</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/06/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85/">完全背包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/04/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/04/%E4%BA%8C%E7%BB%B4%E8%BF%B7%E5%AE%AB/">二维迷宫</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
